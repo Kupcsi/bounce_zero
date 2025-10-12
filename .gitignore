@@ -73,3 +73,6 @@ convert_font16.py
 convert_font23.py
 convert_font24.py
 convert_font9.py
+
+.vscode/
+.claude/
