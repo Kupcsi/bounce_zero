@@ -1,3 +1,5 @@
+[English version](README_en.md)
+
 # Bounce Zero
 
 Порт оригинальной игры **Bounce (2002, Java/Sun для Nokia 7210)** на платформу **PlayStation Portable (PSP)**.  
