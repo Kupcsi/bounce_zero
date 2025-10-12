@@ -10,7 +10,9 @@ LIBDIR =
 LDFLAGS =
 LIBS = -lpspgu -lpspgum -lpspdisplay -lpspge -lpspctrl -lpspaudiolib -lpspaudio -lz
 
-EXTRA_TARGETS = EBOOT.PBP
+# ---- Настройки PSP EBOOT ----
+BUILD_DIR    = release
+EXTRA_TARGETS = $(BUILD_DIR)/EBOOT.PBP
 PSP_EBOOT_TITLE = Bounce
 PSP_EBOOT_ICON  = ICON0.PNG
 PSP_EBOOT_PIC1  = PIC1.PNG
@@ -30,13 +32,10 @@ RELEASE_DIR = ./release
 .PHONY: default
 default: $(EXTRA_TARGETS)
 	@echo "Creating release folder..."
-	@mkdir -p $(RELEASE_DIR)
-	@rsync EBOOT.PBP $(RELEASE_DIR)/
-	@rsync -u *.dat $(RELEASE_DIR)/ 2>/dev/null || true
-	@rsync -ru --size-only icons/ $(RELEASE_DIR)/icons/
+	@rsync -ru --size-only icons/  $(RELEASE_DIR)/icons/
 	@rsync -ru --size-only levels/ $(RELEASE_DIR)/levels/
 	@rsync -ru --size-only sounds/ $(RELEASE_DIR)/sounds/
-	@rsync -ru --size-only lang/ $(RELEASE_DIR)/lang/
+	@rsync -ru --size-only lang/   $(RELEASE_DIR)/lang/
 	@mkdir -p $(BACKUP_DIR)
 	@zip -rq "$(BACKUP_FILE)" Makefile icons levels lang src \
 	    -x "src/*.o" -x "src/*.d"
