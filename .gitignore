@@ -56,3 +56,14 @@ dkms.conf
 
 backup/
 original_code/
+release/
+
+bounce_save.dat
+grid_watcher_1.py
+glyphs23.txt
+glyphs16.txt
+glyphs12lite.txt
+glyphs9.txt
+glyphs1.txt
+glyphs.txt
+glyphs 2.txt
