@@ -37,6 +37,7 @@ default: $(EXTRA_TARGETS)
 	@rsync -ru --size-only levels/ $(RELEASE_DIR)/levels/
 	@rsync -ru --size-only sounds/ $(RELEASE_DIR)/sounds/
 	@rsync -ru --size-only lang/   $(RELEASE_DIR)/lang/
+	@rm -f Bounce.elf
 	@mkdir -p $(BACKUP_DIR)
 	@zip -rq "$(BACKUP_FILE)" Makefile icons levels lang src \
 	    -x "src/*.o" -x "src/*.d"
