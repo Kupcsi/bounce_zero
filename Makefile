@@ -11,13 +11,12 @@ LDFLAGS =
 LIBS = -lpspgu -lpspgum -lpspdisplay -lpspge -lpspctrl -lpspaudiolib -lpspaudio -lz
 
 # ---- Настройки PSP EBOOT ----
-BUILD_DIR    = release
-EXTRA_TARGETS = $(BUILD_DIR)/EBOOT.PBP
+EXTRA_TARGETS = EBOOT.PBP
 PSP_EBOOT_TITLE = Bounce
 PSP_EBOOT_ICON  = ICON0.PNG
 PSP_EBOOT_PIC1  = PIC1.PNG
 
-PSPSDK=$(shell psp-config --pspsdk-path)
+PSPSDK = $(shell psp-config --pspsdk-path)
 include $(PSPSDK)/lib/build.mak
 
 # Include auto-generated dependency files
@@ -32,6 +31,8 @@ RELEASE_DIR = ./release
 .PHONY: default
 default: $(EXTRA_TARGETS)
 	@echo "Creating release folder..."
+	@mkdir -p $(RELEASE_DIR)
+	@mv -f EBOOT.PBP $(RELEASE_DIR)/
 	@rsync -ru --size-only icons/  $(RELEASE_DIR)/icons/
 	@rsync -ru --size-only levels/ $(RELEASE_DIR)/levels/
 	@rsync -ru --size-only sounds/ $(RELEASE_DIR)/sounds/
