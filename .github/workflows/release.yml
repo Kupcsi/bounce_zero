@@ -8,7 +8,6 @@ on:
 permissions:
   contents: write
 
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -36,17 +35,21 @@ jobs:
           export PATH="$PATH:$PSPDEV/bin"
           make
 
-      - name: Create timestamped release archive
+      - name: Create structured release archive
         run: |
-          TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")
-          cd release
-          zip -r "../release_${TIMESTAMP}.zip" .
+          TAG=${GITHUB_REF_NAME}
+          PKG="BounceZero-${TAG}.zip"
+          mkdir -p package/BounceZero
+          rsync -a --exclude='bounce_save.dat' release/ package/BounceZero/
+          (cd package && zip -r "../${PKG}" BounceZero)
+          sha256sum "${PKG}" > "${PKG}.sha256"
 
-      - name: Create GitHub release and upload all files
+      - name: Create GitHub release and upload archive only
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            release/**
-            release_*.zip
+            BounceZero-*.zip
+            BounceZero-*.zip.sha256
+          fail_on_unmatched_files: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
